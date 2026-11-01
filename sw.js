@@ -1,5 +1,5 @@
-const CACHE='linguacore-20261101114650';
-const ASSETS=["./", "index.html", "config.js", "manifest.webmanifest", "privacidad.html", "mascot-hero.webp", "mascot-avatar.webp", "icons/icon-192.png", "icons/icon-512.png", "icons/icon-maskable-512.png", "icons/apple-touch-icon.png", "fonts/fonts.css", "fonts/bricolage-grotesque-latin-ext-wght-normal.woff2", "fonts/bricolage-grotesque-latin-wght-normal.woff2", "fonts/hanken-grotesk-latin-ext-wght-normal.woff2", "fonts/hanken-grotesk-latin-wght-normal.woff2"];
+const CACHE='linguacore-20261101125348';
+const ASSETS=["./", "index.html", "config.js", "manifest.webmanifest", "privacidad.html", "mascot-hero.webp", "mascot-avatar.webp", "icon-192.png", "icon-512.png", "icon-maskable-512.png", "apple-touch-icon.png", "fonts.css", "bricolage-grotesque-latin-ext-wght-normal.woff2", "bricolage-grotesque-latin-wght-normal.woff2", "hanken-grotesk-latin-ext-wght-normal.woff2", "hanken-grotesk-latin-wght-normal.woff2"];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
 self.addEventListener('fetch',e=>{
